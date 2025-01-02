@@ -1,0 +1,181 @@
+body {
+    position: relative; /* Required for the pseudo-element to position correctly */
+    min-height: 100vh; /* Ensures the body takes up at least the full viewport height */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('bg.jpg');
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    opacity: 0.7; /* Adjust the opacity here (0.5 = 50% opacity) */
+    z-index: -1; /* Ensures the overlay is behind the content */
+}
+
+body, h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins;
+}
+
+header {
+    height: 60px;
+    width: 100%;
+}
+
+/* Default spinning animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Apply default slow spinning animation to the icon */
+.spin-hover i {
+    animation: spin 3s linear infinite; /* Slow spin by default */
+    transition: animation 0.3s ease; /* Smooth transition for animation speed */
+}
+
+/* Hover effect */
+.spin-hover:hover {
+    transform: scale(1.1); /* Scale up the button on hover */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+/* Apply faster spinning animation to the icon on hover */
+.spin-hover:hover i {
+    animation: spin 1.5s linear infinite; /* Faster spin on hover */
+    transition: animation 0.3s ease; /* Smooth transition for animation speed */
+}
+
+/* Smooth transition when hover is removed */
+.spin-hover {
+    transition: transform 0.3s ease, animation 0.3s ease; /* Smooth transition for both transform and animation */
+}
+
+/* Disable hover and pointer events in desktop mode */
+@media (min-width: 992px) { /* Adjust the breakpoint as needed */
+    .spin-hover {
+        pointer-events: none; /* Disable pointer events */
+    }
+
+    .spin-hover:hover {
+        transform: none; /* Disable scaling on hover */
+    }
+
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.029), 0 0 10px rgba(255, 255, 255, 0.08), 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.269), 0 0 20px rgba(255, 255, 255, 0.377), 0 0 30px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0), 0 0 10px rgba(255, 255, 255, 0), 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+}
+
+.glowing-text {
+    animation: glow 3.5s infinite ease-in-out;
+}
+
+.kartu-isi {
+    margin-bottom: 13px;
+    background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Glassmorphism effect */
+.glassmorphism {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    border-radius: 10px; /* Rounded corners */
+    border: 1px solid rgba(0, 198, 228, 0.678); /* Cyan border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    opacity: 0; /* Start hidden */
+    transform: translateY(-20px); /* Start slightly above */
+    transition: opacity 0.4s ease, transform 0.4s ease; /* Smooth transition */
+    transition-delay: 0.1s; /* Slight delay for a smoother effect */
+  }
+  
+  /* Show dropdown with animation */
+  .dropdown-menu.show.glassmorphism {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+  }
+  
+  /* Dropdown item styling */
+  .glassmorphism .dropdown-item {
+    color: #333; /* Text color */
+    padding: 10px 20px; /* Padding for dropdown items */
+    transition: background 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .glassmorphism .dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.3); /* Light hover effect */
+    border-radius: 5px; /* Rounded corners on hover */
+  }
+
+.subjudul {
+    font-weight: 650;
+    letter-spacing: 1px;
+    font-size: 26pt;
+    margin-bottom: 19px;
+
+}
+
+    /* Container for the cards */
+    .card-container {
+        display: flex;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%;
+        position: relative;
+      }
+  
+      /* Wrapper for the cards to enable infinite scrolling */
+      .card-wrapper {
+        display: flex;
+        animation: slide 80s linear infinite;
+      }
+  
+      /* Individual card styling */
+      .profile-card {
+        flex: 0 0 auto;
+        width: 200px;
+        margin: 10px;
+        padding: 15px;
+        border: 1px solid rgba(146, 146, 146, 0.678);
+        border-radius: 10px;
+        text-align: center;
+        background-color: #f9f9f9;
+        box-shadow: 0 14px 20px rgba(0, 0, 0, 0.268);
+      }
+  
+      /* Profile image styling */
+      .profile-card img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+  
+      /* Animation for sliding cards */
+      @keyframes slide {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
