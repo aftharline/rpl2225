@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RPL 22/23</title>
+    <link rel="icon" href="atom-solid.svg" type="image/x-icon">
     <!-- style -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -12,31 +13,38 @@
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
    </head>
   <body>
 
+    <a href="#home" id="floating-button" class="btn bg-info bg-gradient rounded-5"><i class="fas fa-chevron-up" style="color: rgb(234, 234, 234);"></i></a>
+
     <!-- headnav -->
-    <header class="bg-dark bg-gradient text-center text-light shadow-lg">
+    <header class="bg-dark bg-gradient text-center text-light shadow-lg" id="home">
          <p class="text-uppercase glowing-text" style="padding-top: 6.5px; font-weight: 700; letter-spacing: 1px; font-size: 15pt;">rekayasa perangkat lunak</p>
          <p class="text-uppercase glowing-text" style="margin-top: -10px; letter-spacing: 3.2px; padding-left: 2.5px;">smk negeri palang 2022-2025</p>
     </header>
     
     <nav class="navbar navbar-expand-lg ms-2 d-flex justify-content-center">
         <center>
-          <button style="margin: 4px;" class="btn bg-info bg-gradient rounded-5 text-light shadow-sm spin-hover" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-atom"></i></button>
+          <button style="margin-right: 5px;margin-top: 7px;" class="btn bg-info bg-gradient rounded-5 text-light shadow-sm spin-hover" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-atom"></i></button>
+          <button style="margin-top: 7px;" id="mute-button" class="btn bg-info bg-gradient text-light shadow-sm rounded-5 music-button"><i class="fas fa-music"></i></button>
+          <a href="#"><button style="margin-left: 5px;margin-top: 7px;" class="btn bg-info bg-gradient text-light shadow-sm rounded-5 music-button"><i class="fab fa-instagram"></i></button></a>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="font-weight: 500;">
             <div class="navbar-nav text-center mx-1">
-              <a class="nav-link" aria-current="page" href="#">Halaman Utama</a>
-              <a class="nav-link" href="#">Struktur Kelas</a>
-              <a class="nav-link" href="#">Kegiatan Kelas</a>
+              <a class="nav-link" aria-current="page" href="#home">Halaman Utama</a>
+              <a class="nav-link" href="#struktur">Struktur Kelas</a>
+              <a class="nav-link" href="#kegiatan">Kegiatan Kelas</a>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Selengkapnya
                 </a>
                 <ul class="dropdown-menu glassmorphism">
-                  <li><a class="dropdown-item" href="#">Profil Wali Kelas</a></li>
-                  <li><a class="dropdown-item" href="#">Prestasi Kelas</a></li>
+                  <li><a class="dropdown-item" href="https://www.instagram.com/chaerulfatihin?igsh=eTBkYWRzaG5vcTNq" target="_blank">Profil Wali Kelas</a></li>
+                  <li><a class="dropdown-item" href="#prestasi">Prestasi Kelas</a></li>
                   <li><a class="dropdown-item" href="#">Kontak Kelas</a></li>
                 </ul>
               </li>
@@ -47,202 +55,574 @@
 
     <!-- content -->
 
+    <!-- audio -->
+    <audio id="background-music" autoplay muted loop>
+      <source src="twoon.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
     <!-- definition -->
-    <h1 class="text-uppercase text-center subjudul" >PENGERTIAN</h1>
+    <h1 class="text-uppercase text-center subjudul text-info-emphasis" style="font-size: 41.5px; padding-right: 5px; line-height: 40px;margin-bottom: 25px;">SOFTWARE ENGINEERING</h1>
 
     <div style="margin: 0 12px 0 12px;">
 
         <div class="card border-info kartu-isi shadow-lg">
-            <div class="card-header border-info text-uppercase text-center fw-bold text-info-emphasis" style="letter-spacing: 1px; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(5px);">deskripsi umum</div>
+            <div class="card-header border-info text-uppercase text-center fw-bold text-info-emphasis judul-isi">deskripsi umum</div>
             <div class="card-body">
-                <p style="text-align: justify; font-size: 11pt;" class="mx-2 text-black">Rekayasa Perangkat Lunak (RPL) adalah jurusan di bidang teknologi informasi yang berfokus pada pengembangan perangkat lunak berkualitas. Siswa mempelajari pemrograman, basis data, desain UI/UX, pengujian, dan manajemen proyek IT, serta dibekali kemampuan logika, pemecahan masalah, dan kolaborasi. Jurusan ini mempersiapkan siswa untuk berkarier sebagai programmer, software engineer, web developer, atau cybersecurity specialist, cocok bagi yang berminat pada teknologi dan inovasi digital.</p>
+                <p style="text-align: justify; font-size: 11pt; font-family: Montserrat; font-weight: 450;" class="mx-2 text-black">Rekayasa Perangkat Lunak (RPL) adalah jurusan di bidang teknologi informasi yang berfokus pada pengembangan perangkat lunak berkualitas. Siswa mempelajari pemrograman, basis data, desain UI/UX, pengujian, dan manajemen proyek IT, serta dibekali kemampuan logika, pemecahan masalah, dan kolaborasi. Jurusan ini mempersiapkan siswa untuk berkarier sebagai programmer, software engineer, web developer, atau cybersecurity specialist, cocok bagi yang berminat pada teknologi dan inovasi digital.</p>
             </div>
         </div>
         
         <div class="card border-info kartu-isi shadow-lg">
-            <div class="card-header border-info text-uppercase text-center fw-bold text-info-emphasis" style="letter-spacing: 1px; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(5px);">tentang kelas kami</div>
+            <div class="card-header border-info text-uppercase text-center fw-bold text-info-emphasis judul-isi">tentang kelas kami</div>
             <div class="card-body">
-                <p style="text-align: justify; font-size: 11pt;" class="mx-2 text-black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam soluta ab consectetur magnam dolorem, odit nostrum commodi nemo quisquam dolore esse accusamus fugit, ea repudiandae cupiditate accusantium tenetur tempore neque. Nostrum fugiat quidem maiores. Amet, maiores odit. Non, libero voluptatibus.</p>
+                <p style="text-align: justify; font-size: 11pt; font-family: Montserrat; font-weight: 450;" class="mx-2 text-black">Here we are!, kami adalah keluarga besar jurusan <b>Rekayasa Perangkat Lunak SMK Negeri Palang</b> tahun ajaran 2022 - 2025. Kelas kami berisi 16 <a href="#siswa" class="text-info-emphasis">siswa/siswi</a> hebat dalam dampingan <a href="https://www.instagram.com/chaerulfatihin?igsh=eTBkYWRzaG5vcTNq" class="text-info-emphasis" target="_blank">wali kelas</a> yang cemerlang. Sedikit? iya benar, namun kelas kami adalah salah satu <a href="#prestasi" class="text-info-emphasis">kelas paling berprestasi</a> di <b>SMK Negeri Palang</b>. <br><br> <center><i>And now, enjoy our website guys!</i></center></p>
             </div>
         </div>
 
     </div>
 
     <!-- cards -->
-    <h1 class="text-uppercase text-center subjudul mt-4" >INILAH KAMI</h1>
+    <h1 class="text-uppercase text-center subjudul mt-4" id="siswa">HERE WE ARE!</h1>
 
     <div class="card-container">
       <div class="card-wrapper">
         <!-- Original 17 cards -->
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>A</h3>
-          <p>B</p>
+          <h3>Khoirul Fatihin, S. Pd, Gr.</h3>
+          <p>Codename : Ayahanda </p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>C</h3>
-          <p>D</p>
+          <h3>Muh. Abdee Nur Fatih</h3>
+          <p>Codename : Mas Tobrut</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>E</h3>
-          <p>F</p>
+          <h3>Ahmad Wahid Al Amin</h3>
+          <p>Codename : Softspoken</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>G</h3>
-          <p>H</p>
+          <h3>Agustino Aldo Saputra</h3>
+          <p>Codename : Bos Garam</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>I</h3>
-          <p>J</p>
+          <h3>Adik Agil Prawira</h3>
+          <p>Codename : Cahnom Official</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>K</h3>
-          <p>L</p>
+          <h3>Gefin Fatur Rohman</h3>
+          <p>Codename : Bocil Wibu</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>M</h3>
-          <p>N</p>
+          <h3>Eva Nur Aini</h3>
+          <p>Codename : Polisi Skena</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>O</h3>
-          <p>P</p>
+          <h3>Devita Sari</h3>
+          <p>Codename : Brodita</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>Q</h3>
-          <p>R</p>
+          <h3>Kefin Arifin</h3>
+          <p>Codename : Wahyu China</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>S</h3>
-          <p>T</p>
+          <h3>Yusuf Bagus Chriswanto</h3>
+          <p>Codename : Bagus No Hand</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>U</h3>
-          <p>V</p>
+          <h3>Timbang Sugiri</h3>
+          <p>Codename : Suuuuuuuu</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>W</h3>
-          <p>X</p>
+          <h3>Desta Rangga Saputra</h3>
+          <p>Codename : Kompres Rangga</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>Y</h3> <p>Z</p>
+          <h3>Rasya Aril Yuliangga</h3>
+          <p>Codename : Beruang Grizzly</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>A</h3>
-          <p>B</p>
+          <h3>Syifaul Qulub</h3>
+          <p>Codename : Jordi</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>C</h3>
-          <p>D</p>
+          <h3>Muh. Zakki Yahya Firdaus</h3>
+          <p>Codename : Tikus Tong Tong</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>E</h3>
-          <p>F</p>
+          <h3>Levi Rizky Aditya Pratama</h3>
+          <p>Codename : Tiang Listrik</p>
+        </div>
+        <div class="profile-card">
+          <img src="pp.jpg" alt="Profile Image">
+          <h3>Indra Vigo Ardiansyah</h3>
+          <p>Codename : Indra Cepmek</p>
         </div>
         <!-- Duplicate cards for seamless scrolling -->
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>A</h3>
-          <p>B</p>
+          <h3>Khoirul Fatihin, S. Pd, Gr.</h3>
+          <p>Codename : Ayahanda </p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>C</h3>
-          <p>D</p>
+          <h3>Muh. Abdee Nur Fatih</h3>
+          <p>Codename : Mas Tobrut</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>E</h3>
-          <p>F</p>
+          <h3>Ahmad Wahid Al Amin</h3>
+          <p>Codename : Softspoken</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>G</h3>
-          <p>H</p>
+          <h3>Agustino Aldo Saputra</h3>
+          <p>Codename : Bos Garam</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>I</h3>
-          <p>J</p>
+          <h3>Adik Agil Prawira</h3>
+          <p>Codename : Cahnom Official</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>K</h3>
-          <p>L</p>
+          <h3>Gefin Fatur Rohman</h3>
+          <p>Codename : Bocil Wibu</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>M</h3>
-          <p>N</p>
+          <h3>Eva Nur Aini</h3>
+          <p>Codename : Polisi Skena</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>O</h3>
-          <p>P</p>
+          <h3>Devita Sari</h3>
+          <p>Codename : Brodita</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>Q</h3>
-          <p>R</p>
+          <h3>Kefin Arifin</h3>
+          <p>Codename : Wahyu China</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>S</h3>
-          <p>T</p>
+          <h3>Yusuf Bagus Chriswanto</h3>
+          <p>Codename : Bagus No Hand</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>U</h3>
-          <p>V</p>
+          <h3>Timbang Sugiri</h3>
+          <p>Codename : Suuuuuuuu</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>W</h3>
-          <p>X</p>
+          <h3>Desta Rangga Saputra</h3>
+          <p>Codename : Kompres Rangga</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>Y</h3>
-          <p>Z</p>
+          <h3>Rasya Aril Yuliangga</h3>
+          <p>Codename : Beruang Grizzly</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>A</h3>
-          <p>B</p>
+          <h3>Syifaul Qulub</h3>
+          <p>Codename : Jordi</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>C</h3>
-          <p>D</p>
+          <h3>Muha. Zakki Yahya Firdaus</h3>
+          <p>Codename : Tikus Tong Tong</p>
         </div>
         <div class="profile-card">
           <img src="pp.jpg" alt="Profile Image">
-          <h3>E</h3>
-          <p>F</p>
+          <h3>Levi Rizky Aditya Pratama</h3>
+          <p>Codename : Tiang Listrik</p>
         </div>
+        <div class="profile-card">
+          <img src="pp.jpg" alt="Profile Image">
+          <h3>Indra Vigo Ardiansyah</h3>
+          <p>Codename : Indra Cepmek</p>
+        </div>      
       </div>
     </div>
 
     <!-- logos -->
-    <h1 class="text-uppercase text-center subjudul mt-4" >KAMI PELAJARI DAN GUNAKAN</h1>
+    <h1 class="text-uppercase text-center subjudul mt-3" >STUDY & USAGE</h1>
+
+    <div class="logos-container bg-info bg-gradient">
+      <div class="logos-wrapper" style="padding-top: 9.5px;">
+        <div class="logos">
+          <img src="html.png" alt="HTML" class="logo">
+          <img src="css.png" alt="CSS" class="logo">
+          <img src="js.png" alt="JS" class="logo">
+          <img src="bs.png" alt="Bootstrap" class="logo">
+          <img src="cpp.png" alt="C++" class="logo">
+          <img src="java.png" alt="Java" class="logo">
+          <img src="sql.png" alt="SQL" class="logo">
+          <img src="php.png" alt="PHP" class="logo">
+          <img src="xampp.png" alt="XAMPP" class="logo">
+          <img src="vsc.png" alt="VSCode" class="logo">
+          <img src="netb.png" alt="NetBeans" class="logo">
+        </div>
+        <div class="logos">
+          <img src="html.png" alt="HTML" class="logo">
+          <img src="css.png" alt="CSS" class="logo">
+          <img src="js.png" alt="JS" class="logo">
+          <img src="bs.png" alt="Bootstrap" class="logo">
+          <img src="cpp.png" alt="C++" class="logo">
+          <img src="java.png" alt="Java" class="logo">
+          <img src="sql.png" alt="SQL" class="logo">
+          <img src="php.png" alt="PHP" class="logo">
+          <img src="xampp.png" alt="XAMPP" class="logo">
+          <img src="vsc.png" alt="VSCode" class="logo">
+          <img src="netb.png" alt="NetBeans" class="logo">
+        </div>
+      </div>
+    </div>
+
+        <!-- quotes -->
+<div style="margin: 0 12px 0 12px; margin-top: 13px;" class="row mx-0">
+            <div class="col">
+            <div class="card border-info kartu-isi shadow-lg">
+                <!-- <div class="card-header border-info text-uppercase text-center fw-bold text-info-emphasis" style="letter-spacing: 1px; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(5px);">deskripsi umum</div> -->
+                <div class="card-body py-5 px-4 mx-3">
+                    <p style="font-size: 40pt; font-family: DM Serif Text; font-weight: 450; line-height: 40px;" class="mx-2 text-black">Great Software Like a Fine Wine, Matures to Perfection with Patience.</p>
+                    <p class="text-end mt-3" style="font-style: italic; line-height: 18px;">"Perangkat lunak yang hebat seperti halnya anggur berkualitas, menjadi sempurna dengan kesabaran."</p>
+                    <p class="text-end" style="font-weight: bold;margin-top: 37px;">Muhammad Abdee Nur Fatih</p>
+                  </div>
+            </div>
+            </div>
+            <div class="col">
+            <div class="card border-info kartu-isi shadow-lg">
+              <!-- <div class="card-header border-info text-uppercase text-center fw-bold text-info-emphasis" style="letter-spacing: 1px; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(5px);">deskripsi umum</div> -->
+              <div class="card-body py-5 px-4 mx-3">
+                  <p style="font-size: 20pt; font-family: DM Serif Text; font-weight: 450; line-height: 36px;" class="mx-2 text-black text-end">世界を変えるアプリケーションの背後には、情報技術の分野で働く天才的な思考があります。そこでコードは武器となり、革新は未来を設計するための鍵となります。</p>
+                  <p class="text-start mt-3" style="font-style: italic; line-height: 18px;">"Di balik setiap aplikasi yang mengubah dunia, ada pikiran jenius yang bekerja dalam Teknik Informatika. Di sanalah kode menjadi senjata, dan inovasi menjadi kunci untuk merancang masa depan."</p>
+                  <p class="text-start" style="font-weight: bold;margin-top: 37px;">RPL 2022 SMK Negeri Palang</p>
+                </div>
+          </div>
+          </div>
 
 
+        <!-- structure -->
+    <h1 class="text-uppercase text-center subjudul text-info-emphasis mt-2" style="font-size: 41.5px; padding-right: 6px;" id="struktur">CLASS STRUCTURE</h1>
+
+    <div class="col-lg-12">
+    <div class="card border-info kartu-isi shadow-lg">
+      <div class="card-header border-info text-uppercase text-center fw-bold text-info-emphasis judul-isi">wali kelas</div>
+      <div class="card-body">
+          <p style="font-size: 11pt; font-family: Montserrat; font-weight: 450;" class="mx-2 text-black text-center"><a href="https://www.instagram.com/chaerulfatihin?igsh=eTBkYWRzaG5vcTNq" class="text-info-emphasis" target="_blank">Khoirul Fatihin, S. Pd, Gr.</a></p>
+          <p class="text-center text-uppercase fw-bold">Wali kelas Terbaik</p>
+      </div>
+    </div>
+    </div>
+  
+    <div class="col">
+          <div class="card border-info kartu-isi shadow-lg">
+              <div class="card-header border-info text-uppercase text-center fw-bold text-info-emphasis judul-isi">kelas x</div>
+              <div class="card-body">
+                  <table  style="font-size: 11pt; font-family: Montserrat; font-weight: 450;">
+                    <tr>
+                      <td class="pe-3">Ketua</td>
+                      <td>:</td>
+                      <td class="ps-3">Indra Vigo Ardiansyah</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-3">Wakil Ketua</td>
+                      <td>:</td>
+                      <td class="ps-3"></td>
+                    </tr>
+                    <tr>
+                      <td class="pe-3">Sekretaris 1</td>
+                      <td>:</td>
+                      <td class="ps-3"></td>
+                    </tr>
+                    <tr>
+                      <td class="pe-3">Sekretaris 2</td>
+                      <td>:</td>
+                      <td class="ps-3"></td>
+                    </tr>
+                    <tr>
+                      <td class="pe-3">Bendahara 1</td>
+                      <td>:</td>
+                      <td class="ps-3"></td>
+                    </tr>
+                    <tr>
+                      <td class="pe-3">Bendahara 2</td>
+                      <td>:</td>
+                      <td class="ps-3"></td>
+                    </tr>
+                  </table>
+              </div>
+          </div>
+    </div>
+    <div class="col">
+      <div class="card border-info kartu-isi shadow-lg">
+          <div class="card-header border-info text-uppercase text-center fw-bold text-info-emphasis judul-isi">kelas xi</div>
+          <div class="card-body">
+              <table  style="font-size: 11pt; font-family: Montserrat; font-weight: 450;">
+                <tr>
+                  <td class="pe-3">Ketua</td>
+                  <td>:</td>
+                  <td class="ps-3">Muhammad Abdee Nur Fatih</td>
+                </tr>
+                <tr>
+                  <td class="pe-3">Wakil Ketua</td>
+                  <td>:</td>
+                  <td class="ps-3"></td>
+                </tr>
+                <tr>
+                  <td class="pe-3">Sekretaris 1</td>
+                  <td>:</td>
+                  <td class="ps-3"></td>
+                </tr>
+                <tr>
+                  <td class="pe-3">Sekretaris 2</td>
+                  <td>:</td>
+                  <td class="ps-3"></td>
+                </tr>
+                <tr>
+                  <td class="pe-3">Bendahara 1</td>
+                  <td>:</td>
+                  <td class="ps-3"></td>
+                </tr>
+                <tr>
+                  <td class="pe-3">Bendahara 2</td>
+                  <td>:</td>
+                  <td class="ps-3"></td>
+                </tr>
+              </table>
+          </div>
+      </div>
+    </div>
+    <div class="col">
+          <div class="card border-info kartu-isi shadow-lg">
+              <div class="card-header border-info text-uppercase text-center fw-bold text-info-emphasis judul-isi">kelas xii</div>
+              <div class="card-body">
+                  <table  style="font-size: 11pt; font-family: Montserrat; font-weight: 450;">
+                    <tr>
+                      <td class="pe-3">Ketua</td>
+                      <td>:</td>
+                      <td class="ps-3">Yusuf Bagus Chriswanto</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-3">Wakil Ketua</td>
+                      <td>:</td>
+                      <td class="ps-3"></td>
+                    </tr>
+                    <tr>
+                      <td class="pe-3">Sekretaris 1</td>
+                      <td>:</td>
+                      <td class="ps-3"></td>
+                    </tr>
+                    <tr>
+                      <td class="pe-3">Sekretaris 2</td>
+                      <td>:</td>
+                      <td class="ps-3"></td>
+                    </tr>
+                    <tr>
+                      <td class="pe-3">Bendahara 1</td>
+                      <td>:</td>
+                      <td class="ps-3"></td>
+                    </tr>
+                    <tr>
+                      <td class="pe-3">Bendahara 2</td>
+                      <td>:</td>
+                      <td class="ps-3"></td>
+                    </tr>
+                  </table>
+              </div>
+          </div>
+    </div>
+
+    <!-- activity -->
+    <h1 class="text-uppercase text-center subjudul text-info-emphasis mt-2" style="font-size: 41.5px; padding-right: 6px;" id="kegiatan">CLASS activity</h1>
+    
+    <div class="bgslider pt-4 bg-dark bg-gradient shadow-lg">
+      <div class="slider-container" style="margin-top: -20px;">
+        <!-- Card 1 -->
+        <div class="card text-bg-light slideav shadow-lg">
+          <img src="bg2.jpg" class="card-img" alt="...">
+          <div class="card-img-overlay">
+            <h5 class="card-title text-uppercase text-black">Judul 1</h5>
+            <p class="card-text" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;"><small>Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+        <!-- Card 1 -->
+        <div class="card text-bg-light slideav shadow-lg">
+          <img src="bg2.jpg" class="card-img" alt="...">
+          <div class="card-img-overlay">
+            <h5 class="card-title text-uppercase text-black">Judul 1</h5>
+            <p class="card-text" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;"><small>Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+        <!-- Card 1 -->
+        <div class="card text-bg-light slideav shadow-lg">
+          <img src="bg2.jpg" class="card-img" alt="...">
+          <div class="card-img-overlay">
+            <h5 class="card-title text-uppercase text-black">Judul 1</h5>
+            <p class="card-text" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;"><small>Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+        <!-- Card 1 -->
+        <div class="card text-bg-light slideav shadow-lg">
+          <img src="bg2.jpg" class="card-img" alt="...">
+          <div class="card-img-overlay">
+            <h5 class="card-title text-uppercase text-black">Judul 1</h5>
+            <p class="card-text" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;"><small>Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+        <!-- Card 1 -->
+        <div class="card text-bg-light slideav shadow-lg">
+          <img src="bg2.jpg" class="card-img" alt="...">
+          <div class="card-img-overlay">
+            <h5 class="card-title text-uppercase text-black">Judul 1</h5>
+            <p class="card-text" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;"><small>Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+        <!-- Card 1 -->
+        <div class="card text-bg-light slideav shadow-lg">
+          <img src="bg2.jpg" class="card-img" alt="...">
+          <div class="card-img-overlay">
+            <h5 class="card-title text-uppercase text-black">Judul 1</h5>
+            <p class="card-text" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;"><small>Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+        <!-- Card 1 -->
+        <div class="card text-bg-light slideav shadow-lg">
+          <img src="bg2.jpg" class="card-img" alt="...">
+          <div class="card-img-overlay">
+            <h5 class="card-title text-uppercase text-black">Judul 1</h5>
+            <p class="card-text" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;"><small>Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+        <!-- Card 1 -->
+        <div class="card text-bg-light slideav shadow-lg">
+          <img src="bg2.jpg" class="card-img" alt="...">
+          <div class="card-img-overlay">
+            <h5 class="card-title text-uppercase text-black">Judul 1</h5>
+            <p class="card-text" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;"><small>Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      
+  
+
+      <!-- Add more cards as needed -->
+      </div>
+    </div>
+
+        <!-- champ -->
+        <h1 class="text-uppercase text-center subjudul text-info-emphasis mt-3" style="font-size: 41.5px; padding-right: 6px;" id="prestasi">CLASS CHAMPIONS</h1>
+    
+        <div class="bgchamp pt-4 bg-info bg-gradient shadow-lg">
+          <div class="slider-container" style="margin-top: -20px;">
+            <!-- Card 1 -->
+            <div class="card text-bg-secondary slideav shadow-lg">
+              <img src="bg2.jpg" class="card-img" alt="...">
+              <div class="card-img-overlay">
+                <h5 class="card-title text-uppercase text-black">Judul 1</h5>
+                <p class="card-text text-black" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text text-black" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;"><small>Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+                        <!-- Card 1 -->
+            <div class="card text-bg-secondary slideav shadow-lg">
+              <img src="bg2.jpg" class="card-img" alt="...">
+              <div class="card-img-overlay">
+                <h5 class="card-title text-uppercase text-black">Judul 1</h5>
+                <p class="card-text text-black" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text text-black" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;"><small>Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <!-- Card 1 -->
+            <div class="card text-bg-secondary slideav shadow-lg">
+              <img src="bg2.jpg" class="card-img" alt="...">
+              <div class="card-img-overlay">
+                <h5 class="card-title text-uppercase text-black">Judul 1</h5>
+                <p class="card-text text-black" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text text-black" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;"><small>Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <!-- Card 1 -->
+            <div class="card text-bg-secondary slideav shadow-lg">
+              <img src="bg2.jpg" class="card-img" alt="...">
+              <div class="card-img-overlay">
+                <h5 class="card-title text-uppercase text-black">Judul 1</h5>
+                <p class="card-text text-black" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text text-black" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;"><small>Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <!-- Card 1 -->
+            <div class="card text-bg-secondary slideav shadow-lg">
+              <img src="bg2.jpg" class="card-img" alt="...">
+              <div class="card-img-overlay">
+                <h5 class="card-title text-uppercase text-black">Judul 1</h5>
+                <p class="card-text text-black" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text text-black" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;"><small>Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <!-- Card 1 -->
+            <div class="card text-bg-secondary slideav shadow-lg">
+              <img src="bg2.jpg" class="card-img" alt="...">
+              <div class="card-img-overlay">
+                <h5 class="card-title text-uppercase text-black">Judul 1</h5>
+                <p class="card-text text-black" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text text-black" style="font-size: 11pt; font-family: Montserrat; font-weight: 450;"><small>Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+
+            
+
+    
+          <!-- Add more cards as needed -->
+          </div>
+        </div>
+
+</div>
+
+<footer class="bg-dark bg-gradient shadow-lg d-flex justify-content-center align-items-center" style="height: 50px;">
+  <p class="text-info text-center mx-3" style="letter-spacing: 1px; font-size: 9pt;">Copyright &copy; 2024. Muhammad Abdee Nur Fatih, Made with &nbsp;<i class="fas fa-magic"></i></p>
+</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+ 
+    <script>
+      const audio = document.getElementById('background-music');
+      const button = document.getElementById('mute-button');
+    
+      // Function to toggle mute/unmute
+      function toggleMute() {
+        audio.muted = !audio.muted; // Toggle mute state
+        button.textContent = audio.muted ? "Play" : "Mute"; // Update button text
+      }
+    
+      // Add click event listener to the button
+      button.addEventListener('click', toggleMute);
+    </script>
 
   </body>
 </html>
