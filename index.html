@@ -611,18 +611,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
  
     <script>
-      const audio = document.getElementById('background-music');
-      const button = document.getElementById('mute-button');
-    
-      // Function to toggle mute/unmute
-      function toggleMute() {
-        audio.muted = !audio.muted; // Toggle mute state
-        button.textContent = audio.muted ? "Play" : "Mute"; // Update button text
-      }
-    
-      // Add click event listener to the button
-      button.addEventListener('click', toggleMute);
+          const audio = document.getElementById('background-music');
+          const button = document.getElementById('mute-button');
+
+          // Function to toggle mute/unmute
+          function toggleMute() {
+            audio.muted = !audio.muted; // Toggle mute state
+            button.textContent = audio.muted ? "Play" : "Mute"; // Update button text
+          }
+
+          // Add click event listener to the button
+          button.addEventListener('click', toggleMute);
+
+          // Add event listener to play music when user interacts with the page
+          document.addEventListener('click', function() {
+            audio.play();
+          });
     </script>
 
   </body>
-</html>
+</html> 
